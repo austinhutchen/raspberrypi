@@ -9,7 +9,8 @@ def main():
     temperature = 0
     print('Loading....')
     while i < 17:
-        print('(', i+1, ')','analyzing..')
+        if(i%4==0):
+            print('(', i, ')','analyzing..')
         temperature += round(27 - (sensor_temp.read_u16() * conversion_factor - 0.706)/0.0017212,2)
         utime.sleep(0.4)
         i = i+1
